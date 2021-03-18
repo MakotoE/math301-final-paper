@@ -1,20 +1,15 @@
 package main
 
 func main() {
-	doStuff()
+	_ = answers()
 	// fortyTwo is a candidate for deletion
 }
 
-func doStuff() {
-	answerMap := make(map[string]*int, 100)
-	getAnswer(answerMap)
-}
-
-func getAnswer(answerMap map[string]*int) {
-	fortyTwo := 42
+func answers() *string {
+	answerMap := make(map[string]*string, 100)
+	fortyTwo := "42"
 	answerMap["What do you get if you multiply six by nine?"] = &fortyTwo
+	glassOfWater := "Ask a glass of water."
+	answerMap["What's so unpleasant about being drunk?"] = &glassOfWater
+	return &glassOfWater
 }
-
-/*
-answerMap -> "What ... nine?" -> &fortyTwo
-*/

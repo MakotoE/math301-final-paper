@@ -1,0 +1,28 @@
+Lifetime management through different mathematical models
+
+Set theory can be used to model and analyse stack allocation, while graph theory can be used to perform tracing garbage collection.
+Don't focus on performance
+
+Stack allocation
+- Set theory is used to model the lifetimes of automatic variables
+- Variable a lives within block A, variable b lives within block B, and block B is a subset of A.
+- Stack allocation can be used to store automatic variables because we have a set model of automatic variables
+- Function B is a subset of A so we will delete frame B before frame A. Frame A will never need to be deleted before B. Show Venn diagram.
+- Only the most recently added frame can be deleted in a stack-based allocator. This means the frame that the current instruction just exited.
+- Stacks can be modeled like S_n \in S_{n-1} \in S_{n-2} ... and S_0 is the global/static lifetime
+- Frames can only be added to S_n where S_n is where the PC is
+- The frame you can delete is S_{n+1}.
+
+Heap allocation
+- The previous set model does not work for heap variables
+- Heap allocated variables occupy S_0. Since the global lifetime lasts until your program exits, you might run out of memory if you try to stack allocate variables with undefined lifetimes.
+- Graph theory provides a way to trace heap allocated variables
+- All automatically memory managed languages implement all sorts of complex algorithms. But they all use some kind of graph where variables are vertices and references are the directional edges. Heap memory can be represented with a directed acyclic graph.
+- The disconnected trees that are not connected to the root set can be garbage collected.
+- Mark stage: from the root set, visit and label all connected vertices. Sweep stage: delete all vertices/variables that are not labeled.
+- Analysing a set relationship is easier than traversing a graph.
+https://blog.golang.org/go15gc
+
+Conclusion:
+- Variables with simple lifetimes can be modeled with sets
+- If variables escape to the heap, they should be modeled with a graph

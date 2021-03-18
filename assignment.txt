@@ -1,0 +1,24 @@
+MATH 301 – DISCRETE MATHEMATICS-FINAL PAPER
+
+Instead of a traditional final exam, you are to write a 2-3 page paper in which you reflect on the topics we’ve learned and write about them from a C.S angle. In particular, you are to choose a main topic from two of the three exams (see below for topics), reflect on what you learned (which may be just a brief summary of the topic) and then write about how each topic is or can be applied in the world of CS.,
+
+I will be looking to see that:
+
+    you have addressed topics from 2 of the 3 exams
+    you have accurately described topics you have chosen
+    you have included and correctly used the appropriate vocabulary
+    you have included any relevant formulas correctly in your description
+    you have described one way in which each of your chosen topics will apply to computer science – you may find the examples from the texts or from another resource. Your example should be explained in your own words and not copied directly from any resource. Your examples must include a reference such as text title and page number or website address. (3 total examples, one from each exam material)
+    Your paper is double spaced.
+    You use size 11 or 12 font with regular margins.
+    You have written at least 2 pages
+
+Topics: pick one topic from any 2 of the following exams.
+
+Exam 1: Combinatorics, Set Theory, and Logic.
+
+Exam 2:  Functions, Relations (Equivalence Relations, Partial orders and Solving Recursion Relations…).
+
+Exam 3: Graph Theory (Euler Trail/Circuit, Hamiltonian graphs, Complete graphs, Traveling Salesman, Trees, to name a few)
+
+They will be due by Tuesday March 23:  11:59 PM.

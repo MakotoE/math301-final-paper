@@ -17,7 +17,7 @@ Heap allocation
 - The previous set model does not work for heap variables
 - Heap allocated variables occupy S_0. Since the global lifetime lasts until your program exits, you might run out of memory if you try to stack allocate variables with undefined lifetimes.
 - Graph theory provides a way to trace heap allocated variables
-- All automatically memory managed languages implement all sorts of complex algorithms. But they all use some kind of graph where variables are vertices and references are the directional edges. Heap memory can be represented with a directed acyclic graph.
+- All automatically memory managed languages implement all sorts of complex algorithms. But they all use some kind of graph where variables are vertices and references are the directional edges.
 - The disconnected trees that are not connected to the root set can be garbage collected.
 - Mark stage: from the root set, visit and label all connected vertices. Sweep stage: delete all vertices/variables that are not labeled.
 - Analysing a set relationship is easier than traversing a graph.

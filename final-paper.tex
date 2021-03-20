@@ -22,6 +22,7 @@
 \lstdefinestyle{style}{
     language=Go,
     basicstyle=\ttfamily,
+    keywordstyle=\mdseries,
     showstringspaces=false,
 }
 
@@ -33,44 +34,49 @@ Mathematical Models of Variable Lifetimes
 
 Makoto Emura
 
-There are two ways for a program to store variables in memory: on the stack or in the heap. The compiler and the runtime of high-level languages take care of managing the lifetimes of variables, using algorithms that are based on mathematical models.
+There are two ways to store variables in memory: on the stack or in the heap. The compiler and the runtime of high-level languages manage the lifetimes of variables using structures that are based on sets and graphs.
 
-Set relations can model stack allocation for automatic variables. The scoped relation of variables is that newer scopes when following a program have shorter lifetimes than those of older scopes. In the Go example below, \lstinline{main()} occupies the stack first, then the \lstinline{getAnswer()} frame gets pushed on the stack.
+Set relations can model stack allocation for automatic variables. Automatic variables in a function have shorter lifespans than variables of the parent function in the call stack. In the Go example below, \lstinline{main()} occupies the stack first, then the \lstinline{getAnswer()} frame gets pushed onto the stack.
 
 \setstretch{1}
 \begin{lstlisting}[
     basicstyle=\ttfamily\small
 ]
 func main() {
-	question := "What do you get if you multiply six by nine?"
-	theAnswer := getAnswer(question)
-	// answer variable not needed anymore
+	theQuestion := "What do you get if you multiply six by nine?"
+	theAnswer := getAnswer(theQuestion)
+	// result variable not needed anymore
 	os.Exit(theAnswer)
 }
 
 func getAnswer(question string) int {
-	answer := 42
-	return answer
+	result := 42
+	return result
 }
 \end{lstlisting}
 
-\begin{wrapfigure}{r}{0.25\textwidth}
+\begin{wrapfigure}{r}{0.35\textwidth}
     \begin{center}
-        \includesvg[width=0.25\textwidth]{stack_venn_diagram.svg}
+        \includesvg[
+            width=0.35\textwidth,
+            inkscapelatex=false
+        ]{stack_venn_diagram.svg}
         \caption{Venn diagram of the stack}
         \label{venn_diagram}
     \end{center}
 \end{wrapfigure}
 
 \setstretch{2}
-Figure \ref{venn_diagram} shows how the stack frames created in the previous code can be modeled using a Venn diagram. The lifetime of variables in \lstinline{getAnswer()} lasts until the program counter exits its scope, as noted in the code.
 
-% Make the distinction between block scope and function scope
-We can assign the set $S_0$ to global variables, $S_1$ to variables in \lstinline{main()}, and $S_2$ to variables in \lstinline{getAnswer()}. All variables of $S_1$ and $S_2$ are in the scope of $S_1$ or \lstinline{main()}, but the scope of $S_2$ does not contain $S_1$. If the current scope is $S_n$ where $n \in \mathbb{N}$, $S_{n+1}$ is not used and its frame can be popped off the stack. Variables of $S_n - S_{n+1}$ may be used later and must be kept.
+Figure \ref{venn_diagram} shows how the stack frames created in the example code can be modeled with a Venn diagram. The set $S_0$ contains all global variables, $S_1$ contains variables in \lstinline{main()}, and $S_2$ contains variables in \lstinline{getAnswer()}. If the program counter is in \lstinline{main()} just after \lstinline{getAnswer()} exits, variables within $S_1$ as well as in the subset $S_0$ are allocated on the stack, but  variables of $S_2$ are popped off.
 
-Variables with complex lifetimes need to be allocated on the heap because they do not follow the scoped rules of automatic variables. If the stack-based memory structure was applied to heap-allocated variables, they would need to occupy $S_0$ and would last as long as the program is running, potentially consuming all system memory, without manual deletion or the use of a garbage collection (GC) runtime. The common mark-and-sweep garbage collector uses a graph to represent all heap-allocated variables in a program.
+Note that the string \lstinline{theQuestion} is passed to \lstinline{getAnswer()}, and global variables, if there were any, can be used in \lstinline{getAnswer()}. References can be passed into functions and must outlive the function that was called. This is why a Venn diagram is used to show the subset relations of lifetimes.
 
-The code below contains two heap-allocated variables. \lstinline{fortyTwo} is unneeded after \lstinline{answers()} but \lstinline{glassOfWater} is used outside of \lstinline{answers()}. Using a map ensures that the compiler does not optimize the code by using the stack. Figure \ref{heap_graph} illustrates how the GC would mark variables in use and those that can be deallocated.
+To generalize this model for any stack-based lifetimes, let $m, n \in \mathbb{N}$, $m < n$, and the function scope $S_0 \subset S_1 \subset S_2 \subset \cdots \subset S_n$. The lifetimes of variables in $S_n$ are shorter than those of $S_m$. Additionally, if the current function is $S_m$, the frame represented by $S_{m+1}$ should be popped off the stack. Variables in $S_m$ may be used later and must be kept.
+
+Variables with complex lifetimes need to be allocated on the heap because they do not follow the set-based rules of automatic variables. If the stack-based memory structure was applied to heap-allocated variables, they would all occupy $S_0$ and would last as long as the program is running, potentially consuming all system memory and other resources. Heap-allocated variables need to be manually deleted or periodically cleaned with a garbage collector (GC). The common mark-and-sweep GC uses a graph to represent all heap-allocated variables in a program. \cite{geeksforgeeks.org}
+
+The code below contains two heap-allocated variables. \lstinline{fortyTwo} is not needed after \lstinline{answers()} but \lstinline{glassOfWater} is used outside of \lstinline{answers()}. A \lstinline{map} of pointers is used to force the compiler to allocate its values in the heap. Figure \ref{heap_graph} illustrates how the GC would mark variables in use and those that can be deallocated.
 
 \setstretch{1}
 \begin{lstlisting}[
@@ -94,19 +100,23 @@ func answers() *string {
 
 \begin{figure}[htb!]
     \centering
-    \includesvg[width=0.6\textwidth]{heap_graph.svg}
+    \includesvg[
+        width=0.6\textwidth,
+        inkscapelatex=false
+    ]{heap_graph.svg}
     \caption{Graphs of the heap at different points in the code}
     \label{heap_graph}
 \end{figure}
 
 \setstretch{2}
-Although Figure \ref{heap_graph} is a very simplified form of Go's GC model, it shows the basic idea of how all mark-and-sweep garbage collectors are implemented. \cite{golang.org} The root set contains all known active variables, whether those are static, local, or other necessary variables in the current context. \cite{dynatrace.com} The edges in the graph represent references to values. The vertices at the head of each edge are the memory blocks that contain some data.
+Although Figure \ref{heap_graph} is a very simplified form of Go's GC model, it shows the basic idea of how all mark-and-sweep garbage collectors are implemented. \cite{golang.org} The root set contains all known active variables, whether those are static, local, or other necessary variables in the current context. \cite{dynatrace.com} The directed edges in the graph represent references to values. The vertices at the head of each edge are the memory blocks that contain some data.
 
-During a GC cycle, the marking stage starts by traversing each tree, starting from the root vertices. Each vertex that are connected to the root is marked as in use. The remaining vertices remain unmarked. The sweeping stage occurs next, going through the memory array and deallocating, or deleting, blocks that are not marked. All other blocks are cleared of the in-use flag in preparation for the next cycle. \cite{geeksforgeeks.org}
+During a GC cycle, the marking stage starts by traversing each graph, starting from the root vertices of the root set. Each vertex that is connected to the root is marked as in use. The remaining vertices remain unmarked. The sweeping stage occurs next, which goes through the memory array and deleting blocks that are not marked. All other blocks are cleared of the in-use flag in preparation for the next cycle. \cite{geeksforgeeks.org}
 
-The tree traversal algorithm and the need to pause all threads during a GC cycle to avoid race conditions makes it a time-expensive operation compared to the simple pointer adjustments to the stack and frame pointers in stack-based allocation. If there are clear ways to define the scopes of variables, they should be allocated on the stack. Otherwise, they can be stored in the heap and the garbage collector will keep track of their lifetimes with a graph.
+The traversal algorithm and the need to pause all threads during a GC cycle to avoid race conditions make it a time-expensive operation compared to the simple pointer adjustments to the stack and frame pointers in stack-based allocation. If there are clear ways to define the boundaries of variable lifetimes, they should be allocated on the stack. Otherwise, they can be stored in the heap in the form of a graph which the garbage collector will use to keep track of their lifetimes.
 
+\clearpage
 \setstretch{1}
-\printbibliography
+\printbibliography[heading=none]
 
 \end{document}

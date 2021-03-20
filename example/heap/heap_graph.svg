@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="136.60655mm"
-   height="85.981499mm"
-   viewBox="0 0 136.60655 85.981499"
+   width="141.0363mm"
+   height="85.501022mm"
+   viewBox="0 0 141.0363 85.501023"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
@@ -108,28 +108,28 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9899495"
-     inkscape:cx="281.53114"
-     inkscape:cy="172.04682"
+     inkscape:zoom="1.4"
+     inkscape:cx="251.04273"
+     inkscape:cy="194.3806"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="true"
-     inkscape:window-width="935"
+     inkscape:window-width="1870"
      inkscape:window-height="1016"
-     inkscape:window-x="985"
+     inkscape:window-x="50"
      inkscape:window-y="27"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      lock-margins="true"
-     fit-margin-top="1"
-     fit-margin-left="1"
-     fit-margin-right="1"
-     fit-margin-bottom="1">
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
        id="grid30"
-       originx="-5.8718049"
-       originy="-7.1177662" />
+       originx="-6.8718048"
+       originy="-8.1177662" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -147,7 +147,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-5.8718052,-7.1177662)">
+     transform="translate(-6.8718052,-8.1177662)">
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.994714"
        id="rect28"
@@ -179,26 +179,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="97.179863"
-       y="15.927958"
+       x="96.157852"
+       y="15.745356"
        id="text1222"><tspan
          sodipodi:role="line"
          id="tspan1220"
-         x="97.179863"
-         y="15.927958"
+         x="96.157852"
+         y="15.745356"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:start;text-anchor:start;stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0 0">answerMap</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="87.797714"
-       y="40.909309"
+       style="font-style:normal;font-weight:normal;font-size:4.58611px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="86.678642"
+       y="40.821205"
        id="text1222-0-0"><tspan
          sodipodi:role="line"
          id="tspan1220-7-4"
-         x="87.797714"
-         y="40.909309"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
+         x="86.678642"
+         y="40.821205"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0">fortyTwo</tspan></text>
     <text
        xml:space="preserve"
@@ -220,15 +220,15 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="116.31583"
-       y="40.541847"
+       style="font-style:normal;font-weight:normal;font-size:4.58611px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="115.19675"
+       y="40.453743"
        id="text1222-0-0-1"><tspan
          sodipodi:role="line"
          id="tspan1220-7-4-0"
-         x="116.31583"
-         y="40.541847"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
+         x="115.19675"
+         y="40.453743"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0 0 0 0 0">glassOfWater</tspan></text>
     <text
        xml:space="preserve"
@@ -269,18 +269,18 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="75.972023"
-       y="62.674454"
+       x="73.559326"
+       y="62.325249"
        id="text1222-6"><tspan
          sodipodi:role="line"
          id="tspan1220-8"
-         x="75.972023"
-         y="62.674454"
+         x="73.559326"
+         y="62.325249"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:start;text-anchor:start;stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0">main()</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-weight:normal;font-size:4.58611px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="70.146446"
        y="87.03421"
        id="text1222-0-0-3"><tspan
@@ -288,12 +288,12 @@
          id="tspan1220-7-4-8"
          x="70.146446"
          y="87.03421"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;text-anchor:middle;stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0">fortyTwo</tspan><tspan
          sodipodi:role="line"
          x="70.146446"
-         y="91.478371"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="92.811638"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;text-anchor:middle;stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
          id="tspan69">(can be deleted)</tspan></text>
     <path
@@ -303,7 +303,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-weight:normal;font-size:4.58611px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="87.740761"
        y="86.843933"
        id="text1222-0-0-1-4"><tspan
@@ -311,18 +311,18 @@
          id="tspan1220-7-4-0-7"
          x="87.740761"
          y="86.843933"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0 0 0 0 0 0 0">glassOfWater</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="83.187439"
-       y="15.958517"
+       x="83.363716"
+       y="16.023169"
        id="text1222-6-6"><tspan
          sodipodi:role="line"
          id="tspan1220-8-8"
-         x="83.187439"
-         y="15.958517"
+         x="83.363716"
+         y="16.023169"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;text-anchor:middle;stroke-width:0.264583"
          rotate="0 0 0 0 0 0 0">main()</tspan></text>
     <path
